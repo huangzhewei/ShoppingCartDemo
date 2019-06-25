@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
         cball.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                shoppingCartAdapter.selectAllCheck(isChecked);
+                if (buttonView.isPressed()) {
+                    shoppingCartAdapter.selectAllCheck(isChecked);
+                }
             }
         });
         shoppingCartAdapter.setOnMoneyChanged(new ShoppingCartAdapter.OnMoneyChanged() {
@@ -46,7 +48,18 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        shoppingCartAdapter.setOnChildCheckedListener(new ShoppingCartAdapter.OnChildCheckedListener() {
+            @Override
+            public void onChildChecked(int groupPosition, int childPosition, boolean isChecked) {
+                cball.setChecked(shoppingCartAdapter.getGroupCount() == shoppingCartAdapter.getGroupSelectedCount());
+            }
+        });
+        shoppingCartAdapter.setOnGroupChecked(new ShoppingCartAdapter.OnGroupChecked() {
+            @Override
+            public void onCheck(int GroupPosition, boolean checked) {
+                cball.setChecked(shoppingCartAdapter.getGroupCount() == shoppingCartAdapter.getGroupSelectedCount());
+            }
+        });
         mTvDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private ArrayList<ShoppingCartModel> getData() {
-        int lv0Count = 16;
+        int lv0Count = 6;
         int lv1Count = 2;
 
         ArrayList<ShoppingCartModel> res = new ArrayList<>();

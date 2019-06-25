@@ -184,35 +184,18 @@ public class ShoppingCartAdapter extends BaseExpandableListAdapter {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         int count = Integer.parseInt(edt.getText().toString().trim());
-                        expandListDataEntities.get(groupPosition).getList().get(childPosition).setGoodsCount(count);
-                        notifyDataSetChanged();
+                        if (count >= 1) {
+                            expandListDataEntities.get(groupPosition).getList().get(childPosition).setGoodsCount(count);
+                            notifyDataSetChanged();
+                        } else {
+                            Toast.makeText(context, "不能再少了", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
                 dialog.show();
             }
         });
 
-//        viewHolder.etnumber.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int i) {
-//
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//                viewHolder.etnumber.removeTextChangedListener(this);
-//                int count = Integer.parseInt(viewHolder.etnumber.getText().toString().trim());
-//                Log.e("info","size: "+ expandListDataEntities.get(groupPosition).getList().size()+"|child: "+childPosition);
-//                //expandListDataEntities.get(groupPosition).getList().get(childPosition).setGoodsCount(count);
-//                notifyDataSetChanged();
-//                viewHolder.etnumber.addTextChangedListener(this);
-//            }
-//        });
 
         viewHolder.cbitem.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -303,41 +286,6 @@ public class ShoppingCartAdapter extends BaseExpandableListAdapter {
         notifyDataSetChanged();
     }
 
- /*   public void removeItemData() {
-        test();
-
-        *//*if (getSelectedCount() == 0) {
-            Toast.makeText(context, "请选择后再删除", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (getSelectedCount() == getAllChildCount()) {
-            expandListDataEntities.clear();
-            notifyDataSetChanged();
-            return;
-        }
-        for (int i = 0; i < expandListDataEntities.size(); i++) {
-            Log.e("infor", "removeItemData: " + i + "|" + getGroupSelectedCount(i) + "|" + expandListDataEntities.get(i).getList().size());
-            if (getGroupSelectedCount(0) == expandListDataEntities.get(0).getList().size()) {
-                expandListDataEntities.remove(expandListDataEntities.get(0));
-                //notifyDataSetChanged();
-            }
-        }
-
-
-        for (int i = 0; i < expandListDataEntities.size(); i++) {
-            for (int y = 0; y < expandListDataEntities.get(i).getList().size(); y++) {
-                if (expandListDataEntities.get(i).getList().get(y).isChecked()) {
-                    expandListDataEntities.get(i).getList().remove(expandListDataEntities.get(i).getList().get(y));
-                    if (expandListDataEntities.get(i).getList().size() == 0) {
-                        expandListDataEntities.remove(i);
-                    }
-                }
-            }
-        }
-
-        notifyDataSetChanged();*//*
-    }*/
-
     public void removeItemData() {
         if (getSelectedCount() == 0) {
             Toast.makeText(context, "请选择后再删除", Toast.LENGTH_SHORT).show();
@@ -365,10 +313,10 @@ public class ShoppingCartAdapter extends BaseExpandableListAdapter {
         notifyDataSetChanged();
     }
 
-    private int getGroupSelectedCount(int groupPosition) {
+    public int getGroupSelectedCount() {
         int count = 0;
-        for (int x = 0; x < getChildrenCount(groupPosition); x++) {
-            if (expandListDataEntities.get(groupPosition).getList().get(x).isChecked()) {
+        for (int x = 0; x < getGroupCount(); x++) {
+            if (expandListDataEntities.get(x).isChecked()) {
                 count = count + 1;
             }
         }
@@ -382,16 +330,6 @@ public class ShoppingCartAdapter extends BaseExpandableListAdapter {
                 if (expandListDataEntities.get(i).getList().get(x).isChecked()) {
                     count = count + 1;
                 }
-            }
-        }
-        return count;
-    }
-
-    private int getAllChildCount() {
-        int count = 0;
-        for (int i = 0; i < getGroupCount(); i++) {
-            for (int x = 0; x < getChildrenCount(i); x++) {
-                count = count + 1;
             }
         }
         return count;
