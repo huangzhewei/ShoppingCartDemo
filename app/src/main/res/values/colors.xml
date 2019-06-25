@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="login_title">#83889A</color>
+    <color name="login_FF695C">#FF695C</color>
+    <color name="login_28354C">#28354C</color>
+    <color name="login_FF5A60">#FF5A60</color>
+    <color name="login_83889A">#83889A</color>
+    <color name="login_D1D3DB">#D1D3DB</color>
+    <color name="login_C4C5CE">#C4C5CE</color>
+    <color name="view_F5F6F6">#F5F6F6</color>
+    <color name="view_ECECEC">#ECECEC</color>
+    <color name="bg_tag_1">#FF975F</color>
+    <color name="bg_tag_2">#3F86FF</color>
+    <color name="tv_goods_money">#DF0000</color>
+    <color name="dialog_confirm">#007aff</color>
+    <color name="dialog_cancel">#f44336</color>
+    <color name="color_939aa5">#939aa5</color>
+    <color name="transparent">#00000000</color>
+</resources>

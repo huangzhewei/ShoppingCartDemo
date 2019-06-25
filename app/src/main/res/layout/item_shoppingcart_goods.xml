@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <CheckBox
+        android:id="@+id/cb_item"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="14dp"
+        android:background="@drawable/selector_round_check"
+        android:button="@null" />
+
+
+    <ImageView
+        android:id="@+id/iv_goods"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_default" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:text="廓形复古牛仔外套"
+            android:textColor="@color/login_28354C"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_color"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_shoppingcar_colour"
+            android:drawableRight="@mipmap/ic_checkd_true"
+            android:drawablePadding="6dp"
+            android:gravity="center"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:text="驼色；XL"
+            android:textColor="@color/login_28354C"
+            android:textSize="12sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:includeFontPadding="false"
+                android:text="¥"
+                android:textColor="@color/tv_goods_money"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:includeFontPadding="false"
+                android:text="468"
+                android:textColor="@color/tv_goods_money"
+                android:textSize="14sp" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_marginRight="14dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/tv_delete"
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_shoppingcart_reduce"
+                    android:gravity="center"
+                    android:text="———"
+                    android:textSize="15sp" />
+
+
+                <TextView
+                    android:id="@+id/et_number"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_shoppingcart_inputnumber"
+                    android:gravity="center"
+                    android:maxLength="4"
+                    android:maxLines="1"
+                    android:text="1"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_add"
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_shoppingcart_add"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="+"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

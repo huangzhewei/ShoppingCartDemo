@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ShoppingCartDemo</string>
+    <string name="shopping_car">购物车</string>
+    <string name="all_election">全选</string>
+    <string name="total">合计 :</string>
+    <string name="settlement">结算</string>
+    <string name="manager">管理</string>
+    <string name="delete">删除</string>
+</resources>
